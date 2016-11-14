@@ -87,5 +87,9 @@
 			"revisionTime": "2016-09-28T15:37:09Z"
 		}
 	],
-	"rootPath": "github.com/AllanCochrane"
+	"rootPath": "github.com/AllanCochrane",
+        "heroku": {
+            "install" : ["./..."],
+            "goVersion" : "go1.6"
+        }
 }
