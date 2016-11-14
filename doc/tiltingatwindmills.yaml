@@ -10,19 +10,18 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-host: petstore.swagger.wordnik.com
-basePath: /v2
+basePath: /
 schemes:
   - http
 paths:
-  /tweets/:screen_name:
+  /tweets/{screen_name}:
     get:
       summary: Finds Tweets by a user
       description: Returns an array of the text of recent tweets
       produces:
         - application/json
       parameters:
-        - in: query
+        - in: path
           name: screen_name
           description: Screen name for user for tweets
           required: true
@@ -38,19 +37,21 @@ paths:
           description: Errors
           schema:
             type: object
-  /common/:screen_name1/:screen_name2:
+            properties:
+              error: string
+  /common/{screen_name1}/{screen_name2}:
     get:
       summary: Finds shared followers
       description: Returns an array of shared follower names.
       produces:
         - application/json
       parameters:
-        - in: query
+        - in: path
           name: screen_name1
           description: First name to find
           required: true
           type: string
-        - in: query
+        - in: path
           name: screen_name2
           description: Second name to find
           required: true
@@ -66,7 +67,11 @@ paths:
           description: Errors
           schema:
             type: object
+            properties:
+              error: string
         "404":
           description: Errors
           schema:
             type: object
+            properties:
+              error: string
