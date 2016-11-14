@@ -6,9 +6,9 @@ A small Go app to show user's tweets and find shared followers
 Requirements
 ------------
 
-[[Go][http://golang.org]]
+[Go](http://golang.org)
 
-[[Twitter credentials][https://apps.twitter.com/]] (TODO: This might not be the right link ...)
+[Twitter API credentials](https://apps.twitter.com/) (TODO: This might not be the right link ...)
 
 Installation
 ------------
