@@ -60,7 +60,7 @@ func main() {
 	router := gin.Default()
 
 	//Swagger docs
-	router.Static("/docs", "../doc/dist")
+	router.Static("/doc", "./doc")
 
 	// This handler will match /tweets/john but will not match either /tweets/ or /tweets
 	router.GET("/tweets/:name", func(c *gin.Context) {
@@ -70,8 +70,8 @@ func main() {
 		values.Add("screen_name", name)
 		timeline, err := api.GetUserTimeline(values)
 		if err != nil {
-			log.Fatal(err)
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error})
+			// log.Fatal(err)
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Could not find user"}) // TODO: Better error handling here
 			return
 		}
 		tweets := extractTweets(c, timeline)
