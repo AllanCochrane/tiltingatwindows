@@ -49,4 +49,4 @@ go run tiltingatwindmils.go
 
 The server runs on localhost port 8000, documentation is at:
 
-http://localhost:8000/docs
+http://localhost:8000/doc/dist
